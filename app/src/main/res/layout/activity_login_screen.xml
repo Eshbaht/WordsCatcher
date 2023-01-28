@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".Login.LoginScreen"
+android:background="@drawable/bookstage">
+
+    <Button
+        android:id="@+id/regestry"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/start_game"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="60dp"
+        android:backgroundTint="@color/teal_200"
+        android:onClick="registartion"
+        android:text="Регистрация"
+        android:textColor="@color/black"
+        tools:ignore="UsingOnClickInXml" />
+
+    <EditText
+        android:id="@+id/enter_name"
+        android:layout_width="250dp"
+        android:layout_height="65dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="250dp"
+        android:background="@drawable/edittext_start_screen"
+        android:hint="Введите свое имя"
+        android:textAlignment="center"
+        android:textColor="@color/black" />
+
+
+    <Button
+        android:id="@+id/start_game"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/enter_name"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/teal_200"
+        android:onClick="enterNameAndstartGame"
+        android:text="Старт!"
+        tools:ignore="UsingOnClickInXml" />
+
+
+</RelativeLayout>

@@ -1,0 +1,584 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/settings_background"
+    tools:context=".MainGame.MainGame"
+    android:screenOrientation="portrait">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/starter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/main_play"
+        android:onClick="LetsGo"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="130dp"
+        tools:layout_editor_absoluteY="196dp" />
+
+    <RelativeLayout
+        android:id="@+id/topLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp">
+
+        <RelativeLayout
+            android:id="@+id/intod_latout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/main_progressbar" />
+
+        <androidx.core.widget.ContentLoadingProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="0dp"
+            android:progressDrawable="@drawable/dash_progressbar"
+
+            android:theme="?android:attr/progressBarStyleHorizontal" />
+
+
+        <TextView
+            android:id="@+id/textLvl"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_alignTop="@+id/progressBar"
+            android:layout_marginStart="15dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="3dp"
+            android:layout_toEndOf="@id/progressBar"
+            android:text="Уровень:"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/lvlview"
+            android:layout_width="30dp"
+            android:layout_height="20dp"
+            android:layout_alignTop="@+id/progressBar"
+            android:layout_toEndOf="@id/textLvl"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:gravity="left"
+            android:textAlignment="gravity"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp" />
+
+
+        <TextView
+            android:id="@+id/textScore"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_alignBottom="@+id/progressBar"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@id/progressBar"
+            android:text="Очки:"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/score"
+            android:layout_width="25dp"
+            android:layout_height="20dp"
+            android:layout_alignBottom="@+id/progressBar"
+            android:layout_toEndOf="@id/textLvl"
+            android:layout_marginBottom="5dp"
+            android:textAlignment="textEnd"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/scoreMax"
+            android:layout_width="25dp"
+            android:layout_height="20dp"
+            android:layout_alignEnd="@id/progressBar"
+            android:layout_alignBottom="@+id/progressBar"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp" />
+
+    </RelativeLayout>
+
+    <androidx.constraintlayout.motion.widget.MotionLayout
+        android:id="@+id/Colo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/chars_layout"
+        android:layout_below="@+id/topLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/main_game_board"
+        android:onClick="open_menu"
+        app:layoutDescription="@xml/game_start_xml_colo_scene2">
+
+
+        <ImageView
+            android:id="@+id/img_nextlvl"
+            android:layout_width="210dp"
+            android:layout_height="210dp"
+            android:alpha="0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/nextlvl" />
+
+        <ImageView
+            android:id="@+id/thrue_word"
+            android:layout_width="210dp"
+            android:layout_height="210dp"
+            android:alpha="0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/wow" />
+
+        <ImageView
+            android:id="@+id/img_miss_word"
+            android:layout_width="210dp"
+            android:layout_height="210dp"
+            android:alpha="0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/main_miss_word" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/pr1"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:background="@drawable/main_note_press"
+            android:onClick="ClickButton1"
+            android:textSize="14sp"
+            tools:layout_editor_absoluteX="321dp"
+            tools:layout_editor_absoluteY="55dp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/pr2"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:background="@drawable/main_note_press"
+            android:onClick="ClickButton2"
+            android:textSize="14sp"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="174dp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/pr3"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:background="@drawable/main_note_press"
+            android:onClick="ClickButton3"
+            android:textSize="14sp"
+            tools:layout_editor_absoluteX="321dp"
+            tools:layout_editor_absoluteY="235dp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/pr4"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:background="@drawable/main_note_press"
+            android:onClick="ClickButton4"
+            android:textSize="14sp"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="246dp" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/pr5"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:background="@drawable/main_note_press"
+            android:onClick="ClickButton5"
+            android:textSize="14sp"
+            tools:layout_editor_absoluteX="266dp"
+            tools:layout_editor_absoluteY="301dp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/pr6"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:background="@drawable/main_note_press"
+            android:onClick="ClickButton6"
+            android:textSize="14sp"
+            tools:layout_editor_absoluteX="7dp"
+            tools:layout_editor_absoluteY="356dp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/pr7"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:background="@drawable/main_note_press"
+            android:onClick="ClickButton7"
+            android:textSize="14sp"
+            tools:layout_editor_absoluteX="321dp"
+            tools:layout_editor_absoluteY="411dp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/pr8"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:background="@drawable/main_note_press"
+            android:onClick="ClickButton8"
+            android:textSize="14sp"
+            tools:layout_editor_absoluteX="71dp"
+            tools:layout_editor_absoluteY="466dp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/pr9"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:background="@drawable/main_note_press"
+            android:onClick="ClickButton9"
+            android:textSize="14sp"
+            tools:layout_editor_absoluteX="126dp"
+            tools:layout_editor_absoluteY="65dp" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/pr10"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:background="@drawable/main_note_press"
+            android:onClick="ClickButton10"
+            android:textSize="14sp"
+            tools:layout_editor_absoluteX="256dp"
+            tools:layout_editor_absoluteY="466dp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/pr11"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:background="@drawable/main_note_press"
+            android:onClick="ClickButton11"
+            android:textSize="14sp"
+            tools:layout_editor_absoluteX="234dp"
+            tools:layout_editor_absoluteY="466dp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/pr12"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:background="@drawable/main_note_press"
+            android:onClick="ClickButton12"
+            android:textSize="14sp"
+            tools:layout_editor_absoluteX="332dp"
+            tools:layout_editor_absoluteY="399dp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/pr13"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:background="@drawable/main_note_press"
+            android:onClick="ClickButton13"
+            android:textSize="14sp"
+            tools:layout_editor_absoluteX="40dp"
+            tools:layout_editor_absoluteY="235dp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/pr14"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:background="@drawable/main_note_press"
+            android:onClick="ClickButton14"
+            android:textSize="14sp"
+            tools:layout_editor_absoluteX="7dp"
+            tools:layout_editor_absoluteY="326dp" />
+    </androidx.constraintlayout.motion.widget.MotionLayout>
+
+    <RelativeLayout
+        android:id="@+id/chars_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/engine_buttons"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="10dp"
+        android:padding="7dp"
+        android:onClick="Chek_1"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="@drawable/main_literals">
+
+
+        <TextView
+            android:id="@+id/char_1"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/main_leteral"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/char_2"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="2dp"
+            android:layout_toEndOf="@id/char_1"
+            android:background="@drawable/main_leteral"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/char_3"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@id/char_2"
+            android:background="@drawable/main_leteral"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/char_4"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@id/char_3"
+            android:background="@drawable/main_leteral"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/char_5"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@id/char_4"
+            android:background="@drawable/main_leteral"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/char_6"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@id/char_5"
+            android:background="@drawable/main_leteral"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/char_7"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@id/char_6"
+            android:background="@drawable/main_leteral"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/char_8"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@id/char_7"
+            android:background="@drawable/main_leteral"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/char_9"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@id/char_8"
+            android:background="@drawable/main_leteral"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/char_10"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@id/char_9"
+            android:background="@drawable/main_leteral"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/char_11"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@id/char_10"
+            android:background="@drawable/main_leteral"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/char_12"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@id/char_11"
+            android:background="@drawable/main_leteral"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/char_13"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@id/char_12"
+            android:background="@drawable/main_leteral"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/char_14"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_toEndOf="@id/char_13"
+            android:background="@drawable/main_leteral"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textColor="@color/black" />
+
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/engine_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="15dp">
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/resetWord"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_toStartOf="@+id/menu_pause"
+            android:background="@drawable/main_reset_word"
+            android:onClick="ResetField" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/menu_pause"
+            android:layout_width="55dp"
+            android:layout_height="45dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/main_menu"
+            android:onClick="open_menu" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/reset"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_toEndOf="@+id/menu_pause"
+            android:background="@drawable/main_reset_all"
+            android:onClick="SwitchShow" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,785 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MyAchives.Achives">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/stats_background">
+
+
+            <Button
+                android:id="@+id/butClose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/achives_bak_game_up"
+                android:layout_centerHorizontal="true"
+                android:onClick="Close"/>
+
+
+            <ImageView
+                android:id="@+id/word_img_all"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/butClose"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/achives_all" />
+
+            <ProgressBar
+                android:id="@+id/word_bar_all"
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="12dp"
+                android:layout_alignBottom="@+id/word_img_all"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="5dp"
+                android:layout_toStartOf="@+id/word_stat_img_all"
+                android:layout_toEndOf="@+id/word_img_all"
+                android:indeterminateDrawable="@color/white" />
+
+            <TextView
+                android:id="@+id/word_name_all"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/word_img_all"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="15dp"
+                android:layout_toEndOf="@+id/word_img_all"
+                android:text="Всего собранных слов"
+                android:textSize="13sp" />
+
+            <ImageView
+                android:id="@+id/word_stat_img_all"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/word_bar_all"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="3dp"
+                android:background="@drawable/achives_scores" />
+            <TextView
+                android:id="@+id/word_stat_lit_all"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="53dp"
+                android:layout_toStartOf="@+id/word_stat_max_all"
+                android:layout_alignBottom="@+id/word_stat_img_all"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/word_stat_max_all"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/word_stat_img_all"
+                android:layout_marginStart="-55dp"
+                android:layout_toEndOf="@+id/word_stat_img_all"
+                android:text="000"
+                android:textSize="15sp" />
+
+
+            <ImageView
+                android:id="@+id/word_img_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/word_img_all"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/achives_3" />
+
+            <ProgressBar
+                android:id="@+id/word_bar_3"
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="12dp"
+                android:layout_alignBottom="@+id/word_img_3"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="10dp"
+                android:layout_toStartOf="@+id/word_stat_img_3"
+                android:layout_toEndOf="@+id/word_img_3" />
+
+            <TextView
+                android:id="@+id/word_name_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/word_bar_3"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="15dp"
+                android:layout_toEndOf="@+id/word_img_3"
+
+                android:text="Слов из 3 букв" />
+
+            <ImageView
+                android:id="@+id/word_stat_img_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/word_bar_3"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/achives_scores" />
+            <TextView
+                android:id="@+id/word_stat_lit_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="50dp"
+                android:layout_toStartOf="@+id/word_stat_max_3"
+                android:layout_alignBottom="@+id/word_stat_img_3"
+                android:textSize="18sp"
+                android:text="0"/>
+
+            <TextView
+                android:id="@+id/word_stat_max_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/word_stat_img_3"
+                android:layout_marginStart="-50dp"
+                android:layout_toEndOf="@+id/word_stat_img_3"
+                android:text="000"
+                android:textSize="18sp" />
+
+
+            <ImageView
+                android:id="@+id/word_img_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/word_img_3"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/achives_4" />
+            <ProgressBar
+                android:id="@+id/word_bar_4"
+                android:layout_width="wrap_content"
+                android:layout_height="12dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_alignBottom="@+id/word_img_4"
+                android:layout_toEndOf="@+id/word_img_3"
+                android:layout_toStartOf="@+id/word_stat_img_4"
+                style="@android:style/Widget.ProgressBar.Horizontal" />
+            <TextView
+                android:id="@+id/word_name_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="15dp"
+                android:layout_toEndOf="@+id/word_img_4"
+                android:layout_alignBottom="@+id/word_img_4"
+                android:text="Слов из 4 букв"/>
+            <ImageView
+                android:id="@+id/word_stat_img_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="15dp"
+                android:layout_alignBottom="@+id/word_bar_4"
+                android:background="@drawable/achives_scores"/>
+            <TextView
+                android:id="@+id/word_stat_lit_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="50dp"
+                android:layout_toStartOf="@+id/word_stat_max_4"
+                android:layout_alignBottom="@+id/word_stat_img_4"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/word_stat_max_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/word_stat_img_4"
+                android:layout_marginStart="-50dp"
+                android:layout_toEndOf="@+id/word_stat_img_4"
+                android:text="000"
+                android:textSize="18sp" />
+
+
+            <ImageView
+                android:id="@+id/word_img_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/word_img_4"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/achives_5" />
+            <ProgressBar
+                android:id="@+id/word_bar_5"
+                android:layout_width="wrap_content"
+                android:layout_height="12dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_alignBottom="@+id/word_img_5"
+                android:layout_toEndOf="@+id/word_img_5"
+                android:layout_toStartOf="@+id/word_stat_img_5"
+                style="@android:style/Widget.ProgressBar.Horizontal" />
+            <TextView
+                android:id="@+id/word_name_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_toEndOf="@+id/word_img_5"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="15dp"
+                android:layout_alignBottom="@+id/word_img_5"
+                android:text="Слов из 5 букв"/>
+            <ImageView
+                android:id="@+id/word_stat_img_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="15dp"
+                android:layout_alignBottom="@+id/word_bar_5"
+                android:background="@drawable/achives_scores"/>
+            <TextView
+                android:id="@+id/word_stat_lit_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="50dp"
+                android:layout_toStartOf="@+id/word_stat_max_5"
+                android:layout_alignBottom="@+id/word_stat_img_5"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/word_stat_max_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/word_stat_img_5"
+                android:layout_marginStart="-50dp"
+                android:layout_toEndOf="@+id/word_stat_img_5"
+                android:text="000"
+                android:textSize="18sp" />
+
+
+            <ImageView
+                android:id="@+id/word_img_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/word_img_5"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/achives_6" />
+            <ProgressBar
+                android:id="@+id/word_bar_6"
+                android:layout_width="wrap_content"
+                android:layout_height="12dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_alignBottom="@+id/word_img_6"
+                android:layout_toEndOf="@+id/word_img_6"
+                android:layout_toStartOf="@+id/word_stat_img_6"
+                style="@android:style/Widget.ProgressBar.Horizontal" />
+            <TextView
+                android:id="@+id/word_name_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="15dp"
+                android:layout_alignBottom="@+id/word_img_6"
+                android:layout_toEndOf="@+id/word_img_6"
+
+                android:text="Слов из 6 букв"/>
+            <ImageView
+                android:id="@+id/word_stat_img_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="15dp"
+                android:layout_alignBottom="@+id/word_bar_6"
+                android:background="@drawable/achives_scores"/>
+            <TextView
+                android:id="@+id/word_stat_lit_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="50dp"
+                android:layout_toStartOf="@+id/word_stat_max_6"
+                android:layout_alignBottom="@+id/word_stat_img_6"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/word_stat_max_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/word_stat_img_6"
+                android:layout_marginStart="-50dp"
+                android:layout_toEndOf="@+id/word_stat_img_6"
+                android:text="000"
+                android:textSize="18sp" />
+
+
+            <ImageView
+                android:id="@+id/word_img_7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/word_img_6"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/achives_7" />
+            <ProgressBar
+                android:id="@+id/word_bar_7"
+                android:layout_width="wrap_content"
+                android:layout_height="12dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_alignBottom="@+id/word_img_7"
+                android:layout_toEndOf="@+id/word_img_7"
+                android:layout_toStartOf="@+id/word_stat_img_7"
+                style="@android:style/Widget.ProgressBar.Horizontal" />
+            <TextView
+                android:id="@+id/word_name_7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="15dp"
+                android:layout_alignBottom="@+id/word_img_7"
+                android:layout_toEndOf="@+id/word_img_7"
+
+                android:text="Слов из 7 букв"/>
+            <ImageView
+                android:id="@+id/word_stat_img_7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="15dp"
+                android:layout_alignBottom="@+id/word_bar_7"
+                android:background="@drawable/achives_scores"/>
+            <TextView
+                android:id="@+id/word_stat_lit_7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="50dp"
+                android:layout_toStartOf="@+id/word_stat_max_7"
+                android:layout_alignBottom="@+id/word_stat_img_7"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/word_stat_max_7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/word_stat_img_7"
+                android:layout_marginStart="-50dp"
+                android:layout_toEndOf="@+id/word_stat_img_7"
+                android:text="000"
+                android:textSize="18sp" />
+
+
+            <ImageView
+                android:id="@+id/word_img_8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/word_img_7"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/achives_8" />
+            <ProgressBar
+                android:id="@+id/word_bar_8"
+                android:layout_width="wrap_content"
+                android:layout_height="12dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_alignBottom="@+id/word_img_8"
+                android:layout_toEndOf="@+id/word_img_8"
+                android:layout_toStartOf="@+id/word_stat_img_8"
+                style="@android:style/Widget.ProgressBar.Horizontal" />
+            <TextView
+                android:id="@+id/word_name_8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@+id/word_img_8"
+                android:layout_marginBottom="15dp"
+                android:layout_alignBottom="@+id/word_img_8"
+                android:text="Слов из 8 букв"/>
+            <ImageView
+                android:id="@+id/word_stat_img_8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="15dp"
+                android:layout_alignBottom="@+id/word_bar_8"
+                android:background="@drawable/achives_scores"/>
+            <TextView
+                android:id="@+id/word_stat_lit_8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="50dp"
+                android:layout_toStartOf="@+id/word_stat_max_8"
+                android:layout_alignBottom="@+id/word_stat_img_8"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/word_stat_max_8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/word_stat_img_8"
+                android:layout_marginStart="-50dp"
+                android:layout_toEndOf="@+id/word_stat_img_8"
+                android:text="000"
+                android:textSize="18sp" />
+
+
+            <ImageView
+                android:id="@+id/word_img_9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/word_img_8"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/achives_9" />
+            <ProgressBar
+                android:id="@+id/word_bar_9"
+                android:layout_width="wrap_content"
+                android:layout_height="12dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_alignBottom="@+id/word_img_9"
+                android:layout_toEndOf="@+id/word_img_9"
+                android:layout_toStartOf="@+id/word_stat_img_9"
+                style="@android:style/Widget.ProgressBar.Horizontal" />
+            <TextView
+                android:id="@+id/word_name_9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="15dp"
+                android:layout_alignBottom="@+id/word_img_9"
+                android:layout_toEndOf="@+id/word_img_9"
+                android:text="Слов из 9 букв"/>
+            <ImageView
+                android:id="@+id/word_stat_img_9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="15dp"
+                android:layout_alignBottom="@+id/word_bar_9"
+                android:background="@drawable/achives_scores"/>
+            <TextView
+                android:id="@+id/word_stat_lit_9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="50dp"
+                android:layout_toStartOf="@+id/word_stat_max_9"
+                android:layout_alignBottom="@+id/word_stat_img_9"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/word_stat_max_9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/word_stat_img_9"
+                android:layout_marginStart="-50dp"
+                android:layout_toEndOf="@+id/word_stat_img_9"
+                android:text="000"
+                android:textSize="18sp" />
+
+
+            <ImageView
+                android:id="@+id/word_img_10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/word_img_9"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/achives_10" />
+            <ProgressBar
+                android:id="@+id/word_bar_10"
+                android:layout_width="wrap_content"
+                android:layout_height="12dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_alignBottom="@+id/word_img_10"
+                android:layout_toEndOf="@+id/word_img_10"
+                android:layout_toStartOf="@+id/word_stat_img_10"
+                style="@android:style/Widget.ProgressBar.Horizontal" />
+            <TextView
+                android:id="@+id/word_name_10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="15dp"
+                android:layout_alignBottom="@+id/word_img_10"
+                android:layout_toEndOf="@+id/word_img_10"
+
+                android:text="Слов из 10 букв"/>
+            <ImageView
+                android:id="@+id/word_stat_img_10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="15dp"
+                android:layout_alignBottom="@+id/word_bar_10"
+                android:background="@drawable/achives_scores"/>
+            <TextView
+                android:id="@+id/word_stat_lit_10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="50dp"
+                android:layout_toStartOf="@+id/word_stat_max_10"
+                android:layout_alignBottom="@+id/word_stat_img_10"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/word_stat_max_10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/word_stat_img_10"
+                android:layout_marginStart="-50dp"
+                android:layout_toEndOf="@+id/word_stat_img_10"
+                android:text="000"
+                android:textSize="18sp" />
+
+
+            <ImageView
+                android:id="@+id/word_img_11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/word_img_10"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/achives_11" />
+            <ProgressBar
+                android:id="@+id/word_bar_11"
+                android:layout_width="wrap_content"
+                android:layout_height="12dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_alignBottom="@+id/word_img_11"
+                android:layout_toEndOf="@+id/word_img_11"
+                android:layout_toStartOf="@+id/word_stat_img_11"
+                style="@android:style/Widget.ProgressBar.Horizontal" />
+            <TextView
+                android:id="@+id/word_name_11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="15dp"
+                android:layout_alignBottom="@+id/word_img_11"
+                android:layout_toEndOf="@+id/word_img_11"
+                android:text="Слов из 11 букв"/>
+            <ImageView
+                android:id="@+id/word_stat_img_11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="15dp"
+                android:layout_alignBottom="@+id/word_bar_11"
+                android:background="@drawable/achives_scores"/>
+            <TextView
+                android:id="@+id/word_stat_lit_11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="50dp"
+                android:layout_toStartOf="@+id/word_stat_max_11"
+                android:layout_alignBottom="@+id/word_stat_img_11"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/word_stat_max_11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/word_stat_img_11"
+                android:layout_marginStart="-50dp"
+                android:layout_toEndOf="@+id/word_stat_img_11"
+                android:text="000"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/word_img_12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/word_img_11"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/achives_12" />
+            <ProgressBar
+                android:id="@+id/word_bar_12"
+                android:layout_width="wrap_content"
+                android:layout_height="12dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_alignBottom="@+id/word_img_12"
+                android:layout_toEndOf="@+id/word_img_12"
+                android:layout_toStartOf="@+id/word_stat_img_12"
+                style="@android:style/Widget.ProgressBar.Horizontal" />
+            <TextView
+                android:id="@+id/word_name_12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="15dp"
+                android:layout_alignBottom="@+id/word_img_12"
+                android:layout_toEndOf="@+id/word_img_12"
+
+                android:text="Слов из 12 букв"/>
+            <ImageView
+                android:id="@+id/word_stat_img_12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="15dp"
+                android:layout_alignBottom="@+id/word_bar_12"
+                android:background="@drawable/achives_scores"/>
+            <TextView
+                android:id="@+id/word_stat_lit_12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="50dp"
+                android:layout_toStartOf="@+id/word_stat_max_12"
+                android:layout_alignBottom="@+id/word_stat_img_12"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/word_stat_max_12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/word_stat_img_12"
+                android:layout_marginStart="-50dp"
+                android:layout_toEndOf="@+id/word_stat_img_12"
+                android:text="000"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/word_img_13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/word_img_12"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/achives_13" />
+            <ProgressBar
+                android:id="@+id/word_bar_13"
+                android:layout_width="wrap_content"
+                android:layout_height="12dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_alignBottom="@+id/word_img_13"
+                android:layout_toEndOf="@+id/word_img_13"
+                android:layout_toStartOf="@+id/word_stat_img_13"
+                style="@android:style/Widget.ProgressBar.Horizontal" />
+            <TextView
+                android:id="@+id/word_name_13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="15dp"
+                android:layout_alignBottom="@+id/word_img_13"
+                android:layout_toEndOf="@+id/word_img_13"
+                android:text="Слов из 13 букв"/>
+            <ImageView
+                android:id="@+id/word_stat_img_13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="15dp"
+                android:layout_alignBottom="@+id/word_bar_13"
+                android:background="@drawable/achives_scores"/>
+            <TextView
+                android:id="@+id/word_stat_lit_13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="50dp"
+                android:layout_toStartOf="@+id/word_stat_max_13"
+                android:layout_alignBottom="@+id/word_stat_img_13"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/word_stat_max_13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/word_stat_img_13"
+                android:layout_marginStart="-50dp"
+                android:layout_toEndOf="@+id/word_stat_img_13"
+                android:text="000"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/word_img_14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/word_img_13"
+                android:layout_alignParentStart="true"
+                android:background="@drawable/achives_3"/>
+            <ProgressBar
+                android:id="@+id/word_bar_14"
+                android:layout_width="wrap_content"
+                android:layout_height="12dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_alignBottom="@+id/word_img_14"
+                android:layout_toEndOf="@+id/word_img_14"
+                android:layout_toStartOf="@+id/word_stat_img_14"
+                style="@android:style/Widget.ProgressBar.Horizontal" />
+            <TextView
+                android:id="@+id/word_name_14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="15dp"
+                android:layout_alignBottom="@+id/word_img_14"
+                android:layout_toEndOf="@+id/word_img_14"
+                android:text="Слов из 14 букв"/>
+            <ImageView
+                android:id="@+id/word_stat_img_14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="15dp"
+                android:layout_alignBottom="@+id/word_bar_14"
+                android:background="@drawable/achives_scores"/>
+            <TextView
+                android:id="@+id/word_stat_lit_14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="50dp"
+                android:layout_toStartOf="@+id/word_stat_max_14"
+                android:layout_alignBottom="@+id/word_stat_img_14"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/word_stat_max_14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/word_stat_img_14"
+                android:layout_marginStart="-50dp"
+                android:layout_toEndOf="@+id/word_stat_img_14"
+                android:text="000"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+
+
+
+
+</RelativeLayout>

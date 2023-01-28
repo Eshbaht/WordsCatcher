@@ -1,0 +1,71 @@
+<resources>
+    <string name="app_name">Ловец Слов</string>
+
+    <string name="Login">Сменить аккаунт</string>
+    <string name="Avatars">"Сменить аватарку"</string>
+    <string name="MyAvatar">"Сменить аватарку"</string>
+
+
+    <string name="Start_the_Game">Начать игру</string>
+    <string name="Settings">Параметры игры</string>
+
+    <string name="Statistics">Статистика</string>
+
+
+    <string name="Speed">Скорость</string>
+    <string name="Total_reset">Сбросить</string>
+    <string name="ressets">прогресс</string>
+
+    <string name="Game_standart">Стандартная игра</string>
+    <string name="Game_time">Игра на время</string>
+    <string name="Game_no_idea">В разработке</string>
+    <string name="Game_language">Игра на английском языке (необходма покупка 5$)</string>
+    <string name="Back">Назад</string>
+
+    <string name="Fast">Быстро</string>
+    <string name="Medium">Стандартно</string>
+    <string name="Slow">Медленно</string>
+
+    <string name="Reset_no">Нет</string>
+    <string name="Reset_yes">Да</string>
+
+    <string name="Missions">Миссии</string>
+
+    <string name="score_5">5</string>
+    <string name="score_10">10</string>
+    <string name="score_15">15</string>
+
+    <string name="achives">Собрать слова: </string>
+
+    <string name="speed_game">Скорость игры</string>
+    <string name="type_game">Режим игры</string>
+
+    <string name="lang">Русский</string>
+
+    <string name="standart">Стандартная</string>
+    <string name="onTime">На время</string>
+    <string name="bells">Уведомления</string>
+    <string name="recent">Оставить</string>
+    <string name="recent2">отзыв</string>
+
+    <string name="word_all">/3141</string>
+
+    <string name="word_3">/511</string>
+    <string name="word_4">/765</string>
+    <string name="word_5">/792</string>
+    <string name="word_6">/534</string>
+    <string name="word_7">/307</string>
+    <string name="word_8">/158</string>
+    <string name="word_9">/40</string>
+    <string name="word_10">/21</string>
+    <string name="word_11">/1</string>
+    <string name="word_12">/12</string>
+    <string name="word_13">/5</string>
+    <string name="word_14">/3</string>
+
+    <string name="string_1">По экрану двигаются кнопки. На каждой расположена одна буква. Нажимая на буквы. вы собираете слово. За каждое правильно собранное, получаете очки. За не верное или повторяющееся - теряте очки. При нажатии на кнопку, она блокируется и меняет цвет с фиолетового на зеленый </string>
+    <string name="string_2">С помощью кнопки "Сменить слово", Вы можете смменить буквы, которы расположены на двущихся кнопках. Всего может быть 11 или 14 таких кнопок с буквами.</string>
+    <string name="string_3">С Помощью кнопки "стерть слово", Вы можете стереть уже собранное слово</string>
+    <string name="string_4">Поле для ввода букв автоматически увеличивается при вводе больее 3 букв, добавляя новое поле. После того, как вы собрали нужно слово, нажмите на это поле и увидите результат </string>
+
+</resources>

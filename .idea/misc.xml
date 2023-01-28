@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Android/app/WordsCatcher/app/src/main/res/drawable/bg_card.xml" value="0.3235" />
+        <entry key="..\:/Android/app/WordsCatcher/app/src/main/res/drawable/dash_progressbar.xml" value="0.3235" />
+        <entry key="..\:/Android/app/WordsCatcher/app/src/main/res/drawable/edittext_start_screen.xml" value="0.3235" />
+        <entry key="..\:/Android/app/WordsCatcher/app/src/main/res/layout/activity_about_game.xml" value="0.35260416666666666" />
+        <entry key="..\:/Android/app/WordsCatcher/app/src/main/res/layout/activity_achives.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android/app/WordsCatcher/app/src/main/res/layout/activity_login_screen.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android/app/WordsCatcher/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android/app/WordsCatcher/app/src/main/res/layout/activity_main_game.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android/app/WordsCatcher/app/src/main/res/layout/activity_menu.xml" value="0.35260416666666666" />
+        <entry key="..\:/Android/app/WordsCatcher/app/src/main/res/layout/activity_my_collection_words.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android/app/WordsCatcher/app/src/main/res/layout/activity_my_settings.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android/app/WordsCatcher/app/src/main/res/layout/activity_registartion_screen.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android/app/WordsCatcher/app/src/main/res/layout/activity_start.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android/app/WordsCatcher/app/src/main/res/layout/activity_start_game.xml" value="0.35260416666666666" />
+        <entry key="..\:/Android/app/WordsCatcher/app/src/main/res/layout/activity_switch_word.xml" value="0.35260416666666666" />
+        <entry key="..\:/Android/app/WordsCatcher/app/src/main/res/layout/item.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android/app/WordsCatcher/app/src/main/res/layout/word_colletion_flow.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android/app/WordsCatcher/app/src/main/res/layout/word_switcher.xml" value="0.36666666666666664" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

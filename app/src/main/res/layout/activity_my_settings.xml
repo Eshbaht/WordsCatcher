@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MySettings.MySettings"
+    android:background="@drawable/settings_background"
+    android:screenOrientation="portrait" >
+
+
+    <ImageView
+        android:id="@+id/settings"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/settings_settings" />
+
+    <TextView
+        android:id="@+id/type_game"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/settings"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:text="@string/Login"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/change_my_acount"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/type_game"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="50dp"
+
+        android:background="@drawable/setting_standart_game"
+        android:onClick="notNow"
+        tools:ignore="UsingOnClickInXml" />
+
+
+    <ImageView
+        android:id="@+id/settings_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/settings_right"
+        android:layout_toEndOf="@id/type_game"
+        android:layout_below="@+id/settings"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="30dp"
+        android:layout_centerHorizontal="true"/>
+    <ImageView
+        android:id="@+id/settings_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/settings_left"
+        android:layout_toStartOf="@id/type_game"
+        android:layout_below="@+id/settings"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="30dp"
+        android:layout_centerHorizontal="true"/>
+
+
+    <TextView
+        android:id="@+id/set_game"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/change_my_acount"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35dp"
+        android:text="@string/Avatars"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/set_game_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/change_my_acount"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="45dp"
+        android:layout_toEndOf="@id/type_game"
+        android:background="@drawable/settings_right" />
+
+    <ImageView
+        android:id="@+id/set_game_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/change_my_acount"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="30dp"
+        android:layout_toStartOf="@id/type_game"
+        android:background="@drawable/settings_left" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/my_avatar"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/set_game"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/setting_time_game"
+        android:onClick="notNow"
+        tools:ignore="UsingOnClickInXml" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/back"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="25dp"
+        android:layout_toEndOf="@+id/settings"
+        android:background="@drawable/setting_close"
+        android:onClick="Back" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/language"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:text="@string/lang"
+        android:textSize="15sp"
+        android:textStyle="italic" />
+
+
+    <ImageView
+        android:id="@+id/language"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/setting_ru" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="22dp"
+        android:layout_height="23dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="40dp"
+        android:layout_toStartOf="@+id/language"
+        android:background="@drawable/setting_choose_left"
+        android:onClick="notNow" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="22dp"
+        android:layout_height="23dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="40dp"
+        android:layout_toEndOf="@+id/language"
+        android:background="@drawable/setting_choose_right"
+        android:onClick="notNow" />
+
+</RelativeLayout>
+
+
+

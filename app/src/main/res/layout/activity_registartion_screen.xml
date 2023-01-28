@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".Registration.RegistartionScreen"
+android:background="@drawable/bookstage">
+
+    <EditText
+        android:id="@+id/reg_name"
+        android:layout_width="250dp"
+        android:layout_height="65dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/edittext_start_screen"
+        android:hint="Введите свое имя"
+        android:textAlignment="center"
+        android:textColor="@color/black" />
+
+    <RelativeLayout
+        android:id="@+id/avatarlayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/reg_name"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:background="#b2cdf7"
+        android:padding="10dp">
+
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/radio_avatar_1"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="24dp"
+                android:layout_weight="1"
+                android:checked="true" />
+
+            <RadioButton
+                android:id="@+id/radio_avatar_2"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:id="@+id/radio_avatar_3"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:id="@+id/radio_avatar_4"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1" />
+        </RadioGroup>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/avatar_1"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_toEndOf="@+id/radioGroup"
+            android:background="@drawable/avatar_1" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/avatar_2"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_below="@+id/avatar_1"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@+id/radioGroup"
+            android:background="@drawable/avatar_2" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/avatar_3"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_below="@+id/avatar_2"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@+id/radioGroup"
+            android:background="@drawable/avatar_3" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/avatar_4"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_below="@+id/avatar_3"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@+id/radioGroup"
+            android:background="@drawable/avatar_4" />
+
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/start_game"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/avatarlayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/teal_200"
+        android:onClick="backToLogin"
+        android:text="Ок"
+        tools:ignore="UsingOnClickInXml" />
+
+</RelativeLayout>
