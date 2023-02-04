@@ -61,7 +61,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.CollectWordsVH> {
         }
 
 
-
         public void onBind(CollectWords collectwords) {
             this.collectw = collectwords;
             views.collectWord.setText(collectwords.WORDCOLLECT);

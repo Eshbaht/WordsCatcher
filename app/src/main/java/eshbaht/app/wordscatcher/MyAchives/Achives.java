@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Button;
 import android.widget.TextView;
 
 import eshbaht.app.wordscatcher.DataBase.DataBase;
@@ -21,6 +22,8 @@ public class Achives extends AppCompatActivity {
             word_stat_max_11, word_stat_max_12, word_stat_max_13, word_stat_max_14; //значения максимальной длинны слова
     private TextView  word_stat_lit_all, word_stat_lit_3, word_stat_lit_4, word_stat_lit_5, word_stat_lit_6, word_stat_lit_7, word_stat_lit_8, word_stat_lit_9,
             word_stat_lit_10, word_stat_lit_11, word_stat_lit_12, word_stat_lit_13, word_stat_lit_14; //колличество собранных слов этой длинны
+
+    private Button butClose;
 
     private Player player;
     private DataBase dataBase;
@@ -200,6 +203,8 @@ public class Achives extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_achives);
 
+        butClose = findViewById(R.id.butClose);
+
         word_stat_max_all = findViewById(R.id.word_stat_max_all);
         word_stat_max_3 = findViewById(R.id.word_stat_max_3);
         word_stat_max_4 = findViewById(R.id.word_stat_max_4);
@@ -241,6 +246,8 @@ public class Achives extends AppCompatActivity {
 
         genericCollectWord(); //запрос к БД: сколько собранно слов опредленной длинны
         setCollectWord(); // заполнение полей кол-вом собранных полей опедленной длинны
+
+        butClose.setText("fgfgfgfg");
 
     }
 

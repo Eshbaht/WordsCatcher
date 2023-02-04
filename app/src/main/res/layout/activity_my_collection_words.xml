@@ -1,4 +1,5 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
@@ -37,6 +38,14 @@
         app:layout_constraintBottom_toTopOf="@id/butCloseTask" />
 
 
+    <TextView
+        android:id="@+id/emptyList"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:text="А нет сборанных слов =("
+        android:textSize="20sp" />
 
 
 <ImageView

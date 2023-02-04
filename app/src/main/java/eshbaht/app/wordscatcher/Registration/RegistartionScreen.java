@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import eshbaht.app.wordscatcher.DataBase.DataBase;
 import eshbaht.app.wordscatcher.Login.LoginScreen;
@@ -30,11 +32,19 @@ public class RegistartionScreen extends AppCompatActivity {
 
     public void backToLogin(View v){
         String myName = reg_name.getText().toString();
+        int asd = dataBase.playerDAO().selectPlayerIDByName(myName);
+        Log.d("tyu", ""+asd);
+        if (dataBase.playerDAO().selectPlayerIDByName(myName) !=0){
+            Toast toast = Toast.makeText(getApplicationContext(),
+                    "Такой юзер уже есть", Toast.LENGTH_SHORT);
+            toast.show();
+        } else {
+            dataBase.playerDAO().insertName(myName, "0", "0", "котлисаслон");
+            loginScreen = new Intent(this, LoginScreen.class);
+            startActivity(loginScreen);
+        }
 
 
-        dataBase.playerDAO().insertName(myName);
 
-        loginScreen = new Intent(this, LoginScreen.class);
-        startActivity(loginScreen);
     }
 }

@@ -42,6 +42,6 @@ public interface PlayerDAO {
     @Query("UPDATE Player SET CURRENTWORD = :word WHERE id = :ids")
     void updateCurentWord(String word, long ids);
 
-    @Query("INSERT INTO Player (name) VALUES (:NAME)")
-    void insertName(String NAME);
+    @Query("INSERT INTO Player (name, exp, lvl, CURRENTWORD) VALUES (:NAME, :EXP, :LVL, :CURV )")
+    void insertName(String NAME, String EXP, String LVL, String CURV);
 }

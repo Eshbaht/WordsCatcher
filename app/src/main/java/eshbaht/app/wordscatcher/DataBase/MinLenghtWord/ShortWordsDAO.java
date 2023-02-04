@@ -16,4 +16,5 @@ public interface ShortWordsDAO {
 
     @Query("SELECT COUNT (ShortWord) FROM ShortWords")
     int maxShortWords(); // подсчитывем сколько слов данной длинные есть
+
 }

@@ -1,9 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Menu.Menu">
+    tools:context=".Menu.Menu"
+    android:screenOrientation="portrait"
+    android:id="@+id/statistics"
+    android:background="@drawable/nain_sub_menu">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/title_sub_menu"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/sub_menu_title"
+        android:textAlignment="center"
+        android:textSize="40dp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/butCloseOption"
+        android:layout_width="250dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/title_sub_menu"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/sub_menu_button_next"
+        android:onClick="back_to_game" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/faq"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/butCloseOption"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/sub_menu_button_instruction" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/myAcive"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/faq"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/sub_menu_button_statistic"
+        android:onClick="achives_collect" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/my_collect"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/butCloseOption"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/sub_menu_words"
+        android:onClick="collect_words" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/about"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/my_collect"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/sub_menu_button_about" />
+</RelativeLayout>

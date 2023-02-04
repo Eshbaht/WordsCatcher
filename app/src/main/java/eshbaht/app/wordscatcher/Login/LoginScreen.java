@@ -49,9 +49,10 @@ public class LoginScreen extends AppCompatActivity {
 
     public void enterNameAndstartGame(View v) {
         setMyName(enter_name.getText().toString());
+        int addd = dataBase.playerDAO().selectPlayerIDByName(getMyName());
         if (dataBase.playerDAO().selectPlayerIDByName(getMyName()) != 0) {
 
-            dataBase.playerDAO().updateReservfield(String.valueOf(dataBase.playerDAO().selectPlayerIDByName(getMyName())), 1); //записываем найденный id
+            dataBase.playerDAO().updateReservfield(String.valueOf(addd), 1); //записываем найденный id
 
             Log.d("qwe", String.valueOf(dataBase.playerDAO().selectPlayerRESERVFIELDByID(1)));
 

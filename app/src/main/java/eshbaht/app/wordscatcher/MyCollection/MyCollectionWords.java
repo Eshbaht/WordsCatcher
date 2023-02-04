@@ -2,9 +2,12 @@ package eshbaht.app.wordscatcher.MyCollection;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
 
 import java.util.List;
 
@@ -19,21 +22,30 @@ public class MyCollectionWords extends AppCompatActivity {
 
     private ActivityMyCollectionWordsBinding ui;
     private Adapter adapter;
-
-    private CollectWords collectWords;
     private DataBase dataBase;
-    private Player player;
+    private RecyclerView word_collections;
+    private CollectWords collectWords;
+    private TextView emptyList;
+
     private String currentWord;
     private String currentUser;
 
+    private String maxWord_max;
+    public String getMaxWord_max() {
+        return maxWord_max;
+    }
+    public void setMaxWord_max(String maxWord_max) {
+        this.maxWord_max = maxWord_max;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_collection_words);
 
+        emptyList = findViewById(R.id.emptyList);
+        word_collections = findViewById(R.id.word_collections);
         collectWords = new CollectWords();
-        player = new Player();
         dataBase = DataBase.getInstance(getApplication());
 
 
@@ -44,12 +56,24 @@ public class MyCollectionWords extends AppCompatActivity {
         ui.wordCollections.setLayoutManager(new LinearLayoutManager((this)));
         ui.wordCollections.setAdapter(adapter);
 
-        currentUser = String.valueOf(dataBase.playerDAO().selectPlayerNameByID(1));
-        currentWord = String.valueOf(dataBase.playerDAO().selectCurrentWordByID(1));
-        Log.d("ter",currentUser);
-        Log.d("ter",currentWord);
-        adapter.setCollectWords((List<CollectWords>) dataBase.collectWordsDAO().collectWordsLIst(currentWord, currentUser)); // вывод собранных слов пользователем из КОНКРЕТНОГО СЛОВА
+        setMaxWord_max(String.valueOf(dataBase.shortWordsDAO().maxShortWords()));
 
+        long curUser = dataBase.playerDAO().selectPlayerRESERVFIELDByID1(1);
+        currentUser = String.valueOf(dataBase.playerDAO().selectPlayerNameByID(curUser));
+        currentWord = String.valueOf(dataBase.playerDAO().selectCurrentWordByID(curUser));
+        Log.d("ret","Текущий ользователь: " + currentUser);
+        Log.d("ret", "Текущее слово: " + currentWord);
+
+        setMaxWord_max(String.valueOf(dataBase.shortWordsDAO().maxShortWords()));
+
+        ui.emptyList.setVisibility(View.GONE);
+        long vbn = dataBase.collectWordsDAO().collectWords(currentWord, currentUser);
+        if (vbn==0){
+            ui.emptyList.setVisibility(View.VISIBLE);
+        }
+
+        Log.d("qqw", "слов: " + vbn);
+        adapter.setCollectWords((List<CollectWords>) dataBase.collectWordsDAO().collectWordsLIst(currentWord, currentUser)); // вывод собранных слов пользователем из КОНКРЕТНОГО СЛОВА
     }
 }
 

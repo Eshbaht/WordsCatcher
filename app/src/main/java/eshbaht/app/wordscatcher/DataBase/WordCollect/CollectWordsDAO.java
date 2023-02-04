@@ -17,6 +17,7 @@ public interface CollectWordsDAO {
     @Query("SELECT * FROM CollectWords WHERE BASEWORD = :baseWord and CURRENTUSER = :user")
     List<CollectWords> collectWordsLIst(String baseWord, String user); // все слова собранные из опредленного слова
 
+
     @Query("SELECT COUNT (WORDCOLLECT) FROM CollectWords WHERE BASEWORD = :baseWord and CURRENTUSER = :user")
     int collectWords(String baseWord, String user); // все слова собранные из опредленного слова
 

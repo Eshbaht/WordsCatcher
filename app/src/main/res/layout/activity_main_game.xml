@@ -15,10 +15,11 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:background="@drawable/main_play"
-        android:onClick="LetsGo"
+        android:onClick="LLetsGo_game"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="130dp"
         tools:layout_editor_absoluteY="196dp" />
+
 
     <RelativeLayout
         android:id="@+id/topLayout"
@@ -29,40 +30,31 @@
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="5dp">
 
-        <RelativeLayout
-            android:id="@+id/intod_latout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_marginStart="15dp"
+        <ProgressBar
+            android:id="@+id/indicator"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="200dp"
+            android:layout_height="45dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="5dp"
-            android:layout_marginEnd="15dp"
-            android:background="@drawable/main_progressbar" />
-
-        <androidx.core.widget.ContentLoadingProgressBar
-            android:id="@+id/progressBar"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginBottom="0dp"
-            android:progressDrawable="@drawable/dash_progressbar"
-
-            android:theme="?android:attr/progressBarStyleHorizontal" />
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/myprogressbar"
+            android:progress="0"
+           android:layout_alignParentStart="true"
+            android:layout_toStartOf="@+id/textLvl" />
 
 
         <TextView
             android:id="@+id/textLvl"
-            android:layout_width="wrap_content"
+            android:layout_width="60dp"
             android:layout_height="20dp"
-            android:layout_alignTop="@+id/progressBar"
+            android:layout_alignTop="@+id/indicator"
             android:layout_marginStart="15dp"
-            android:layout_marginBottom="10dp"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="3dp"
-            android:layout_toEndOf="@id/progressBar"
+            android:layout_toStartOf="@id/lvlview"
+            android:background="@color/black"
             android:text="Уровень:"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
@@ -72,11 +64,12 @@
             android:id="@+id/lvlview"
             android:layout_width="30dp"
             android:layout_height="20dp"
-            android:layout_alignTop="@+id/progressBar"
-            android:layout_toEndOf="@id/textLvl"
+            android:layout_alignTop="@+id/indicator"
+            android:layout_alignParentEnd="true"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="5dp"
-            android:gravity="left"
+            android:gravity="center"
+            android:text="1"
             android:textAlignment="gravity"
             android:textColor="#FFFFFF"
             android:textSize="12sp" />
@@ -84,14 +77,14 @@
 
         <TextView
             android:id="@+id/textScore"
-            android:layout_width="wrap_content"
+            android:layout_width="60dp"
             android:layout_height="20dp"
-            android:layout_alignBottom="@+id/progressBar"
+            android:layout_below="@id/lvlview"
             android:layout_marginStart="15dp"
-            android:layout_marginEnd="25dp"
-            android:layout_marginBottom="5dp"
-            android:layout_marginTop="10dp"
-            android:layout_toEndOf="@id/progressBar"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_toStartOf="@id/lvlview"
+            android:background="@color/black"
             android:text="Очки:"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
@@ -99,26 +92,18 @@
 
         <TextView
             android:id="@+id/score"
-            android:layout_width="25dp"
+            android:layout_width="30dp"
             android:layout_height="20dp"
-            android:layout_alignBottom="@+id/progressBar"
-            android:layout_toEndOf="@id/textLvl"
-            android:layout_marginBottom="5dp"
-            android:textAlignment="textEnd"
+            android:layout_below="@+id/lvlview"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:gravity="center"
+            android:text="10"
+            android:textAlignment="gravity"
             android:textColor="#FFFFFF"
             android:textSize="12sp" />
 
-        <TextView
-            android:id="@+id/scoreMax"
-            android:layout_width="25dp"
-            android:layout_height="20dp"
-            android:layout_alignEnd="@id/progressBar"
-            android:layout_alignBottom="@+id/progressBar"
-            android:layout_marginEnd="5dp"
-            android:layout_marginBottom="5dp"
-            android:textAlignment="center"
-            android:textColor="#FFFFFF"
-            android:textSize="12sp" />
 
     </RelativeLayout>
 
@@ -126,13 +111,12 @@
         android:id="@+id/Colo"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/chars_layout"
+        android:layout_above="@+id/chars_layouts"
         android:layout_below="@+id/topLayout"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
         android:background="@drawable/main_game_board"
-        android:onClick="open_menu"
         app:layoutDescription="@xml/game_start_xml_colo_scene2">
 
 
@@ -313,21 +297,20 @@
     </androidx.constraintlayout.motion.widget.MotionLayout>
 
     <RelativeLayout
-        android:id="@+id/chars_layout"
+        android:id="@+id/chars_layouts"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@id/engine_buttons"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"
         android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="5dp"
-        android:layout_marginTop="10dp"
-        android:padding="7dp"
-        android:onClick="Chek_1"
+        android:background="@drawable/main_literals"
         android:clickable="true"
         android:focusable="true"
-        android:background="@drawable/main_literals">
+        android:onClick="Chek_1"
+        android:padding="7dp">
 
 
         <TextView
@@ -345,189 +328,187 @@
             android:id="@+id/char_2"
             android:layout_width="20dp"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="5dp"
+            android:layout_centerVertical="true"
             android:layout_marginStart="2dp"
+            android:layout_marginTop="5dp"
             android:layout_toEndOf="@id/char_1"
             android:background="@drawable/main_leteral"
             android:gravity="center"
             android:textAlignment="center"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/char_3"
             android:layout_width="20dp"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
             android:layout_marginStart="2dp"
             android:layout_marginTop="5dp"
             android:layout_toEndOf="@id/char_2"
             android:background="@drawable/main_leteral"
             android:gravity="center"
             android:textAlignment="center"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/char_4"
             android:layout_width="20dp"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
             android:layout_marginStart="2dp"
             android:layout_marginTop="5dp"
             android:layout_toEndOf="@id/char_3"
             android:background="@drawable/main_leteral"
             android:gravity="center"
             android:textAlignment="center"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/char_5"
             android:layout_width="20dp"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
             android:layout_marginStart="2dp"
             android:layout_marginTop="5dp"
             android:layout_toEndOf="@id/char_4"
             android:background="@drawable/main_leteral"
             android:gravity="center"
             android:textAlignment="center"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/char_6"
             android:layout_width="20dp"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
             android:layout_marginStart="2dp"
             android:layout_marginTop="5dp"
             android:layout_toEndOf="@id/char_5"
             android:background="@drawable/main_leteral"
             android:gravity="center"
             android:textAlignment="center"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/char_7"
             android:layout_width="20dp"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
             android:layout_marginStart="2dp"
             android:layout_marginTop="5dp"
             android:layout_toEndOf="@id/char_6"
             android:background="@drawable/main_leteral"
             android:gravity="center"
             android:textAlignment="center"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/char_8"
             android:layout_width="20dp"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
             android:layout_marginStart="2dp"
             android:layout_marginTop="5dp"
             android:layout_toEndOf="@id/char_7"
             android:background="@drawable/main_leteral"
             android:gravity="center"
             android:textAlignment="center"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/char_9"
             android:layout_width="20dp"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
             android:layout_marginStart="2dp"
             android:layout_marginTop="5dp"
             android:layout_toEndOf="@id/char_8"
             android:background="@drawable/main_leteral"
             android:gravity="center"
             android:textAlignment="center"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/char_10"
             android:layout_width="20dp"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
             android:layout_marginStart="2dp"
             android:layout_marginTop="5dp"
             android:layout_toEndOf="@id/char_9"
             android:background="@drawable/main_leteral"
             android:gravity="center"
             android:textAlignment="center"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/char_11"
             android:layout_width="20dp"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
             android:layout_marginStart="2dp"
             android:layout_marginTop="5dp"
             android:layout_toEndOf="@id/char_10"
             android:background="@drawable/main_leteral"
             android:gravity="center"
             android:textAlignment="center"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/char_12"
             android:layout_width="20dp"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
             android:layout_marginStart="2dp"
             android:layout_marginTop="5dp"
             android:layout_toEndOf="@id/char_11"
             android:background="@drawable/main_leteral"
             android:gravity="center"
             android:textAlignment="center"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/char_13"
             android:layout_width="20dp"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
             android:layout_marginStart="2dp"
             android:layout_marginTop="5dp"
             android:layout_toEndOf="@id/char_12"
             android:background="@drawable/main_leteral"
             android:gravity="center"
             android:textAlignment="center"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/char_14"
             android:layout_width="20dp"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
             android:layout_marginStart="2dp"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="5dp"
@@ -535,8 +516,8 @@
             android:background="@drawable/main_leteral"
             android:gravity="center"
             android:textAlignment="center"
-            android:textColor="@color/black" />
-
+            android:textColor="@color/black"
+            android:textSize="20sp" />
 
 
     </RelativeLayout>
