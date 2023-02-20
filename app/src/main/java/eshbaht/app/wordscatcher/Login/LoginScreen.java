@@ -2,6 +2,8 @@ package eshbaht.app.wordscatcher.Login;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,6 +15,7 @@ import android.widget.Toast;
 import eshbaht.app.wordscatcher.DataBase.DataBase;
 import eshbaht.app.wordscatcher.DataBase.MinLenghtWord.ShortWords;
 import eshbaht.app.wordscatcher.DataBase.Player.Player;
+import eshbaht.app.wordscatcher.FAQ.AboutGame;
 import eshbaht.app.wordscatcher.MainGame.MainGame;
 import eshbaht.app.wordscatcher.R;
 import eshbaht.app.wordscatcher.Registration.RegistartionScreen;
@@ -72,7 +75,32 @@ public class LoginScreen extends AppCompatActivity {
     }
 
 
+    public void onBackPressed() {
+        // super.onBackPressed();
+        openQuitDialog();
+    }
 
+    private void openQuitDialog() {
+        AlertDialog.Builder quitDialog = new AlertDialog.Builder(
+                LoginScreen.this);
+        quitDialog.setTitle("Выход: Вы уверены?");
+
+        quitDialog.setPositiveButton("Да =(", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                finish();
+            }
+        });
+
+        quitDialog.setNegativeButton("Нет =)", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // TODO Auto-generated method stub
+            }
+        });
+
+        quitDialog.show();
+    }
 
 
 

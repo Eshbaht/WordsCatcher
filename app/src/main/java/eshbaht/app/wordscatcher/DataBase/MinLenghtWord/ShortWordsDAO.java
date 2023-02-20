@@ -11,6 +11,9 @@ public interface ShortWordsDAO {
     @Query("SELECT ShortWord FROM ShortWords WHERE ID = :ids")
     SameShortWord selectShortWordByID(long ids); // выбираем конкретное короткое слово
 
+    @Query("SELECT id FROM ShortWords WHERE ShortWord = :word")
+    int selectIDshortWord(String word); // выбираем конкретное короткое слово
+
     @Query("SELECT COUNT (ShortWord) FROM ShortWords WHERE LENGTH(ShortWord) =:lenght")
     int CountShortWordBylenght(long lenght); // подсчитывем сколько слов данной длинные есть
 

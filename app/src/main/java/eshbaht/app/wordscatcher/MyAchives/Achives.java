@@ -3,8 +3,12 @@ package eshbaht.app.wordscatcher.MyAchives;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -14,6 +18,8 @@ import eshbaht.app.wordscatcher.DataBase.Player.Params.PlayerReserv;
 import eshbaht.app.wordscatcher.DataBase.Player.Player;
 import eshbaht.app.wordscatcher.Login.LoginScreen;
 import eshbaht.app.wordscatcher.MainActivity;
+import eshbaht.app.wordscatcher.MainGame.MainGame;
+import eshbaht.app.wordscatcher.Menu.Menu;
 import eshbaht.app.wordscatcher.R;
 
 public class Achives extends AppCompatActivity {
@@ -247,7 +253,7 @@ public class Achives extends AppCompatActivity {
         genericCollectWord(); //запрос к БД: сколько собранно слов опредленной длинны
         setCollectWord(); // заполнение полей кол-вом собранных полей опедленной длинны
 
-        butClose.setText("fgfgfgfg");
+        butClose.setText("Назад");
 
     }
 
@@ -314,6 +320,41 @@ public class Achives extends AppCompatActivity {
         word_stat_lit_13.setText(getCollectWord_13());
         word_stat_lit_14.setText(getCollectWord_14());
     }
+
+
+
+    public void closed_achiev(View v){
+        Intent back = new Intent(this, MainGame.class);
+        startActivity(back);
+    }
+
+//    public void onBackPressed() {
+//        // super.onBackPressed();
+//        openQuitDialog();
+//    }
+//
+//    private void openQuitDialog() {
+//        AlertDialog.Builder quitDialog = new AlertDialog.Builder(
+//                Achives.this);
+//        quitDialog.setTitle("Выход: Вы уверены?");
+//
+//        quitDialog.setPositiveButton("Да =(", new DialogInterface.OnClickListener() {
+//            @Override
+//            public void onClick(DialogInterface dialog, int which) {
+//                finish();
+//            }
+//        });
+//
+//        quitDialog.setNegativeButton("Нет =)", new DialogInterface.OnClickListener() {
+//            @Override
+//            public void onClick(DialogInterface dialog, int which) {
+//                // TODO Auto-generated method stub
+//            }
+//        });
+//
+//        quitDialog.show();
+//    }
+
 
 }
 

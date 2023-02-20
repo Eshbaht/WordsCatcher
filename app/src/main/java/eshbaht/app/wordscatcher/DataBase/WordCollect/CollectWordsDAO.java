@@ -17,12 +17,14 @@ public interface CollectWordsDAO {
     @Query("SELECT * FROM CollectWords WHERE BASEWORD = :baseWord and CURRENTUSER = :user")
     List<CollectWords> collectWordsLIst(String baseWord, String user); // все слова собранные из опредленного слова
 
+    @Query("SELECT WORDCOLLECT FROM CollectWords WHERE BASEWORD = :baseWord and CURRENTUSER = :user and WORDCOLLECT = :collword")
+    String mutchthisWordInCollect(String baseWord, String user, String collword); // поиск такого слова в списке уже сорбанных словах за конкертным юезром из конкретного слова
 
     @Query("SELECT COUNT (WORDCOLLECT) FROM CollectWords WHERE BASEWORD = :baseWord and CURRENTUSER = :user")
     int collectWords(String baseWord, String user); // все слова собранные из опредленного слова
 
-    @Query("INSERT INTO CollectWords (BASEWORD, WORDCOLLECT) VALUES (:baseWord, :newWord) ")
-    void insertNewWord (String baseWord, String newWord); // вставить собранное слово
+    @Query("INSERT INTO CollectWords (BASEWORD, WORDCOLLECT, CURRENTUSER) VALUES (:baseWord, :newWord, :curUser) ")
+    void insertNewWord (String baseWord, String newWord, String curUser); // вставить собранное слово
 
 
 }

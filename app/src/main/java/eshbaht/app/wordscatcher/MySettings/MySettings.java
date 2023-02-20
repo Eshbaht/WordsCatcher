@@ -7,6 +7,7 @@ import androidx.appcompat.widget.SwitchCompat;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -20,6 +21,7 @@ import android.widget.Toast;
 import java.io.IOException;
 
 import eshbaht.app.wordscatcher.MainGame.MainGame;
+import eshbaht.app.wordscatcher.MyCollection.MyCollectionWords;
 import eshbaht.app.wordscatcher.R;
 
 public class MySettings extends AppCompatActivity {
@@ -52,5 +54,33 @@ public class MySettings extends AppCompatActivity {
         Intent intentBack = new Intent(this, MainGame.class);
         startActivity(intentBack);
     }
+
+
+//    public void onBackPressed() {
+//        // super.onBackPressed();
+//        openQuitDialog();
+//    }
+//
+//    private void openQuitDialog() {
+//        AlertDialog.Builder quitDialog = new AlertDialog.Builder(
+//                MySettings.this);
+//        quitDialog.setTitle("Выход: Вы уверены?");
+//
+//        quitDialog.setPositiveButton("Да =(", new DialogInterface.OnClickListener() {
+//            @Override
+//            public void onClick(DialogInterface dialog, int which) {
+//                finish();
+//            }
+//        });
+//
+//        quitDialog.setNegativeButton("Нет =)", new DialogInterface.OnClickListener() {
+//            @Override
+//            public void onClick(DialogInterface dialog, int which) {
+//                // TODO Auto-generated method stub
+//            }
+//        });
+//
+//        quitDialog.show();
+//    }
 
 }

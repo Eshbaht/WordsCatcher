@@ -36,6 +36,12 @@ public interface PlayerDAO {
     @Query("UPDATE Player SET RESERVFIELD = :word WHERE id = :ids")
     void updateReservfield(String word, long ids); //обновляем поле с id юзера. И всегда оперируем к этому полю, когда хотим узнать текущего пользователя. ИСПОЛЬЗУЕМ ид ТОЛЬКО 1
 
+    @Query("UPDATE Player SET EXP = :score WHERE id = :ids")
+    void updateEXP(long ids, int score); //обновляем экспу
+
+    @Query("UPDATE Player SET LVL = :lvl WHERE id = :ids")
+    void updateLVL(long ids, int lvl); //обновляем экспу
+
     @Query("SELECT CURRENTWORD FROM Player WHERE ID = :ids")
     PlayerCurrentWord selectCurrentWordByID(long ids);
 

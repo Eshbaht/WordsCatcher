@@ -8,6 +8,8 @@ import androidx.appcompat.widget.AppCompatCheckBox;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -32,6 +34,7 @@ import eshbaht.app.wordscatcher.DataBase.WordCollect.CollectWords;
 import eshbaht.app.wordscatcher.MyCollection.Adapter;
 import eshbaht.app.wordscatcher.MyCollection.MyCollectionWords;
 import eshbaht.app.wordscatcher.R;
+import eshbaht.app.wordscatcher.StartGame.StartGame;
 import eshbaht.app.wordscatcher.databinding.ActivityMyCollectionWordsBinding;
 import eshbaht.app.wordscatcher.databinding.ActivitySwitchWordBinding;
 
@@ -196,7 +199,32 @@ public class SwitchWord extends AppCompatActivity {
         // Нужно для просмотра собранных слов, без переклчюения на основное слово
     }
 
+    public void onBackPressed() {
+        // super.onBackPressed();
+        openQuitDialog();
+    }
 
+    private void openQuitDialog() {
+        AlertDialog.Builder quitDialog = new AlertDialog.Builder(
+                SwitchWord.this);
+        quitDialog.setTitle("Выход: Вы уверены?");
+
+        quitDialog.setPositiveButton("Да =(", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                finish();
+            }
+        });
+
+        quitDialog.setNegativeButton("Нет =)", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // TODO Auto-generated method stub
+            }
+        });
+
+        quitDialog.show();
+    }
 
 
 }

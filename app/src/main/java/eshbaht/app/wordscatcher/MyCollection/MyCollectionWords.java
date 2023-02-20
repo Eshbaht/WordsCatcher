@@ -4,6 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -14,6 +17,8 @@ import java.util.List;
 import eshbaht.app.wordscatcher.DataBase.DataBase;
 import eshbaht.app.wordscatcher.DataBase.Player.Player;
 import eshbaht.app.wordscatcher.DataBase.WordCollect.CollectWords;
+import eshbaht.app.wordscatcher.MainGame.MainGame;
+import eshbaht.app.wordscatcher.MyAchives.Achives;
 import eshbaht.app.wordscatcher.R;
 import eshbaht.app.wordscatcher.databinding.ActivityMyCollectionWordsBinding;
 
@@ -75,6 +80,41 @@ public class MyCollectionWords extends AppCompatActivity {
         Log.d("qqw", "слов: " + vbn);
         adapter.setCollectWords((List<CollectWords>) dataBase.collectWordsDAO().collectWordsLIst(currentWord, currentUser)); // вывод собранных слов пользователем из КОНКРЕТНОГО СЛОВА
     }
+
+
+    public void onBackPressed() {
+        // super.onBackPressed();
+        openQuitDialog();
+    }
+
+    private void openQuitDialog() {
+        AlertDialog.Builder quitDialog = new AlertDialog.Builder(
+                MyCollectionWords.this);
+        quitDialog.setTitle("Выход: Вы уверены?");
+
+        quitDialog.setPositiveButton("Да =(", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                finish();
+            }
+        });
+
+        quitDialog.setNegativeButton("Нет =)", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // TODO Auto-generated method stub
+            }
+        });
+
+        quitDialog.show();
+    }
+
+    public void closed_achiev(View v){
+        Intent back = new Intent(this, MainGame.class);
+        startActivity(back);
+    }
+
+
 }
 
 

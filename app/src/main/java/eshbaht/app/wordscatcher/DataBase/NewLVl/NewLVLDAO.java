@@ -17,4 +17,12 @@ public interface NewLVLDAO {
 
     @Query("SELECT NEEDEXP FROM NewLVL WHERE ID = :ids")
     NeedExp selectNeedExpByID(long ids);
+
+
+    @Query("SELECT NEEDEXP from NewLVL where NEXTLVL = :lvl")
+    String howMuchEXPtoLvlUP(long lvl);
+
+    @Query("SELECT NEEDEXP from NewLVL where NEXTLVL = :lvl")
+    int howMuchEXPtoLvlUPint(long lvl);
+
 }

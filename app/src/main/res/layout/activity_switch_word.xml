@@ -34,11 +34,12 @@ tools:context=".SwitchWords.SwitchWord">
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/confirm_choise"
         android:layout_width="250dp"
-        android:layout_height="70dp"
+        android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="15dp"
-        android:text="rrr"
+        android:text="НАЗАД В ИГРУ"
+
         android:textAlignment="center" />
 
 

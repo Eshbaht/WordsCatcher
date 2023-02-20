@@ -11,10 +11,11 @@ android:background="@drawable/bookstage">
         android:id="@+id/reg_name"
         android:layout_width="250dp"
         android:layout_height="65dp"
+        android:layout_above="@+id/avatarlayout"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:background="@drawable/edittext_start_screen"
-        android:hint="Введите свое имя"
+        android:hint="Введите свое имя. Минимум 2 символа"
         android:textAlignment="center"
         android:textColor="@color/black" />
 
@@ -22,9 +23,10 @@ android:background="@drawable/bookstage">
         android:id="@+id/avatarlayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/reg_name"
-        android:layout_marginTop="20dp"
+
+        android:layout_centerInParent="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
         android:background="#b2cdf7"
         android:padding="10dp">
 
