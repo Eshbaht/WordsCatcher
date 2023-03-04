@@ -81,37 +81,8 @@ public class MyCollectionWords extends AppCompatActivity {
         adapter.setCollectWords((List<CollectWords>) dataBase.collectWordsDAO().collectWordsLIst(currentWord, currentUser)); // вывод собранных слов пользователем из КОНКРЕТНОГО СЛОВА
     }
 
-
-    public void onBackPressed() {
-        // super.onBackPressed();
-        openQuitDialog();
-    }
-
-    private void openQuitDialog() {
-        AlertDialog.Builder quitDialog = new AlertDialog.Builder(
-                MyCollectionWords.this);
-        quitDialog.setTitle("Выход: Вы уверены?");
-
-        quitDialog.setPositiveButton("Да =(", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                finish();
-            }
-        });
-
-        quitDialog.setNegativeButton("Нет =)", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                // TODO Auto-generated method stub
-            }
-        });
-
-        quitDialog.show();
-    }
-
     public void closed_achiev(View v){
-        Intent back = new Intent(this, MainGame.class);
-        startActivity(back);
+        super.onBackPressed();
     }
 
 

@@ -13,8 +13,8 @@
         android:id="@+id/thisWordShow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
         android:background="@drawable/take_words_down"
         android:textAlignment="center"
         android:textColor="@color/white"
@@ -64,11 +64,11 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="10dp"
         android:background="@drawable/take_words_up"
+        android:onClick="closed_achiev"
+        android:text="Назад"
         android:textAlignment="center"
         android:textColor="@color/white"
-        android:textSize="16sp"
-        android:text="Назад"
-        android:onClick="closed_achiev"/>
+        android:textSize="16sp" />
 
 
 </RelativeLayout>

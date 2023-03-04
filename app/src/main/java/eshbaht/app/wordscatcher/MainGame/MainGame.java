@@ -11,12 +11,15 @@ import androidx.core.widget.ContentLoadingProgressBar;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
@@ -45,7 +48,12 @@ public class MainGame extends AppCompatActivity {
     private AppCompatButton menu_pause, //переход в меню
                             resetWord, // сбросить слово
                             reset; //сменить слово
+
+    private Button task, quest, faq, butCloseOption, butClose_mission; // кнопки меню модалки
+
     private AppCompatButton starter; // основная кнопка начать игру
+
+    private AlertDialog OptionDialog; // модалка с меню по центру экрана
 
     private RelativeLayout chars_layouts, //слой с кнопками куда попадают собранные буквы. Используется для нажатия подврждения сбора слова
                            engine_buttons; // слой с кнопками меню и сброса
@@ -460,10 +468,6 @@ public class MainGame extends AppCompatActivity {
         animationSet.start();
     } //показать уведомление о новом уровне
 
-    public void ResetField(View v){
-        Intent achive = new Intent(this, Achives.class);
-        startActivity(achive);
-    } //сброс кнопок
 
     @Override
     protected void onResume() {
@@ -1119,9 +1123,48 @@ public class MainGame extends AppCompatActivity {
             whyitswork();
             indicator.setMax(100); // второй уровень
         }
-
-
     }
+
+    public void ResetField(View v){
+        ressetChars();
+    } //сброс кнопок
+
+    private void ressetChars(){
+        MainListWord.clear();
+        char_1.setText("");
+        char_2.setText("");
+        char_3.setText("");
+        char_4.setText("");
+        char_5.setText("");
+        char_6.setText("");
+        char_7.setText("");
+        char_8.setText("");
+        char_9.setText("");
+        char_10.setText("");
+        char_11.setText("");
+        char_12.setText("");
+        char_13.setText("");
+        char_14.setText("");
+
+        EneblendButtonsAffterPress();
+
+        char_4.setVisibility(GONE);
+        char_5.setVisibility(GONE);
+        char_6.setVisibility(GONE);
+        char_7.setVisibility(GONE);
+        char_8.setVisibility(GONE);
+        char_9.setVisibility(GONE);
+        char_10.setVisibility(GONE);
+        char_11.setVisibility(GONE);
+        char_12.setVisibility(GONE);
+        char_13.setVisibility(GONE);
+        char_14.setVisibility(GONE);
+    } //сброс кнопок
+
+
+
+
+
 
     public void whyitswork(){
         long playerId = (int) dataBase.playerDAO().selectPlayerRESERVFIELDByID1(1); //получаем ИД текущего юзера
@@ -1143,6 +1186,40 @@ public class MainGame extends AppCompatActivity {
 
 
 
+    public void open_menu_modal(View v){
+        OptionMenu();
+    }
+    public void OptionMenu(){
+        OptionDialog = new AlertDialog.Builder(this).create();
+        LayoutInflater menuOpt = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+        View v = menuOpt.inflate(R.layout.option_menu, null, false);
+        butCloseOption =  v.findViewById(R.id.butCloseOption);
+
+        task = v.findViewById(R.id.task);
+        quest = v.findViewById(R.id.quest);
+        faq = v.findViewById(R.id.faq);
+
+        OptionDialog.setView(v);
+
+        butCloseOption.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                OptionDialog.dismiss();
+            }
+        }); //закрыть модалку
+        OptionDialog.show();
+    }  // меню модалка
+
+    public void achives_collect(View v) {
+        Intent achive = new Intent(this, Achives.class);
+        startActivity(achive);
+    }
+
+    public void collect_words(View v){
+        Intent collect = new Intent(this, MyCollectionWords.class);
+        startActivity(collect);
+    }
 
 
 

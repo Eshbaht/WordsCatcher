@@ -324,41 +324,9 @@ public class Achives extends AppCompatActivity {
 
 
     public void closed_achiev(View v){
-        Intent back = new Intent(this, MainGame.class);
-        startActivity(back);
+        super.onBackPressed();
     }
-
-//    public void onBackPressed() {
-//        // super.onBackPressed();
-//        openQuitDialog();
-//    }
-//
-//    private void openQuitDialog() {
-//        AlertDialog.Builder quitDialog = new AlertDialog.Builder(
-//                Achives.this);
-//        quitDialog.setTitle("Выход: Вы уверены?");
-//
-//        quitDialog.setPositiveButton("Да =(", new DialogInterface.OnClickListener() {
-//            @Override
-//            public void onClick(DialogInterface dialog, int which) {
-//                finish();
-//            }
-//        });
-//
-//        quitDialog.setNegativeButton("Нет =)", new DialogInterface.OnClickListener() {
-//            @Override
-//            public void onClick(DialogInterface dialog, int which) {
-//                // TODO Auto-generated method stub
-//            }
-//        });
-//
-//        quitDialog.show();
-//    }
-
-
 }
-
-
 
 //опредление сколько слов из букв можно сборать максимум опредленной длинны
 //        word_stat_max_3 =

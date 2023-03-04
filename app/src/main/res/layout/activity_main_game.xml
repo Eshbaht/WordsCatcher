@@ -562,7 +562,7 @@
             android:layout_height="45dp"
             android:layout_centerHorizontal="true"
             android:background="@drawable/main_menu"
-            android:onClick="open_menu" />
+            android:onClick="open_menu_modal" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/reset"

@@ -1,0 +1,95 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:screenOrientation="portrait"
+    android:padding="0dp"
+    android:layout_margin="0dp"
+    android:background="@drawable/nain_sub_menu">
+
+
+
+    <RelativeLayout
+        android:id="@+id/statistics"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:screenOrientation="portrait">
+
+        <TextView
+            android:id="@+id/title_sub_menu"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/sub_menu_title"
+            android:layout_margin="10dp"
+            android:textSize="40dp"
+            android:textAlignment="center"/>
+
+        <Button
+            android:id="@+id/butCloseOption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title_sub_menu"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/sub_menu_button_next"
+            android:text="Продолжить" />
+
+        <Button
+            android:id="@+id/faq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/butCloseOption"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/sub_menu_button_instruction"
+            android:text="Инструкции" />
+
+        <Button
+            android:id="@+id/quest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/faq"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/sub_menu_button_statistic"
+            android:onClick="collect_words"
+            android:text="Собранные слова" />
+
+
+        <Button
+            android:id="@+id/task"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/quest"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/sub_menu_words"
+            android:onClick="achives_collect"
+            android:text="Достижения" />
+
+        <TextView
+            android:id="@+id/about"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/task"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="Создатель: Freijer. Дизайн: ****"
+            />
+    </RelativeLayout>
+
+</RelativeLayout>
